@@ -22,9 +22,9 @@ int main() {
 	setConsoleUTF8();
 
 	double m, V, rho, E, h, value;
-	SetConsoleCP(1251);
-	SetConsoleOutputCP(1251);
+	
 	int choice;
+
 	do {
 		cout << "\n=== Командный проект: сборник расчётов ===\n";
 		// === БЛОК МЕНЮ: каждый участник добавляет свои пункты ===
@@ -42,30 +42,33 @@ int main() {
 		switch (choice) {
 			// === БЛОК ОБРАБОТКИ: каждый участник добавляет свои case ===
 		case 1:
+			cout << "Введите массу m и объем V: ";
+			cin >> m >> V;
 			try {
-				cout << "Введите массу m и объем V: ";
-				cin >> m >> V;
-				cout << "Плотность = " << density(m, V) << "\n";
+				double result = density(m, V);
+				cout << "Плотность = " << result << "\n";
 			}
 			catch (const invalid_argument& e) {
 				cerr << e.what() << "\n";
 			}
 			break;
 		case 2:
+			cout << "Введите плотность rho и объем V: ";
+			cin >> rho >> V;
 			try {
-				cout << "Введите плотность rho и объем V: ";
-				cin >> rho >> V;
-				cout << "Масса = " << massFromDensity(rho, V) << "\n";
+				double result = massFromDensity(rho, V);
+				cout << "Масса = " << result << "\n";
 			}
 			catch (const invalid_argument& e) {
 				cerr << e.what() << "\n";
 			}
 			break;
 		case 3:
+			cout << "Введите массу m и плотность rho: ";
+			cin >> m >> rho;
 			try {
-				cout << "Введите массу m и плотность rho: ";
-				cin >> m >> rho;
-				cout << "Объем = " << volumeFromDensity(m, rho) << "\n";
+				double result = volumeFromDensity(m, rho);
+				cout << "Объем = " << result << "\n";
 			}
 			catch (const invalid_argument& e) {
 				cerr << e.what() << "\n";
