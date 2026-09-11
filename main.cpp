@@ -1,4 +1,4 @@
-// Командный проект. Группа ПИ-52.
+﻿// Командный проект. Группа ПИ-52.
 // Команда: Паршукова (в. 63), Лацкова (в. 25), Комаровская (в. 27, техлид).
 
 #include <iostream>
@@ -36,19 +36,34 @@ int main() {
 		switch (choice) {
 			// === БЛОК ОБРАБОТКИ: каждый участник добавляет свои case ===
 		case 1:
-			cout << "Введите массу m и объем V: ";
-			cin >> m >> V;
-			cout << "Плотность = " << density(m, V) << "\n";
+			try {
+				cout << "Введите массу m и объем V: ";
+				cin >> m >> V;
+				cout << "Плотность = " << density(m, V) << "\n";
+			}
+			catch (const invalid_argument& e) {
+				cerr << e.what() << "\n";
+			}
 			break;
 		case 2:
-			cout << "Введите плотность rho и объем V: ";
-			cin >> rho >> V;
-			cout << "Масса = " << massFromDensity(rho, V) << "\n";
+			try {
+				cout << "Введите плотность rho и объем V: ";
+				cin >> rho >> V;
+				cout << "Масса = " << massFromDensity(rho, V) << "\n";
+			}
+			catch (const invalid_argument& e) {
+				cerr << e.what() << "\n";
+			}
 			break;
 		case 3:
-			cout << "Введите массу m и плотность rho: ";
-			cin >> m >> rho;
-			cout << "Объем = " << volumeFromDensity(m, rho) << "\n";
+			try {
+				cout << "Введите массу m и плотность rho: ";
+				cin >> m >> rho;
+				cout << "Объем = " << volumeFromDensity(m, rho) << "\n";
+			}
+			catch (const invalid_argument& e) {
+				cerr << e.what() << "\n";
+			}
 			break;
 			// === КОНЕЦ БЛОКА ОБРАБОТКИ ===
 		case 0:
