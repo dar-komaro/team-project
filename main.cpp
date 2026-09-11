@@ -2,20 +2,21 @@
 // Команда: Паршукова (в. 63), Лацкова (в. 25), Комаровская (в. 27, техлид).
 
 #include <iostream>
+#include <windows.h>
 #include <windows.h> 
 #define g 9.81
 
 // === БЛОК ПОДКЛЮЧЕНИЙ: каждый участник добавляет свой заголовочный файл ===
-// #include "parshukova.h"
+#include "parshukova.h"
 #include "latskova.h"
 #include "komarovskaya.h"
 // === КОНЕЦ БЛОКА ПОДКЛЮЧЕНИЙ ===
 
 using namespace std;
 
-
 int main() {
-	double m, V, rho, E, h;
+
+	double m, V, rho, E, h, value;
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	int choice;
@@ -27,6 +28,8 @@ int main() {
 		cout << "3. Объем\n";
 		cout << "4. Потенциальная энергия\n";
 		cout << "5. Высота через энергию\n";
+        cout << "6. Километры -> Мили\n";
+        cout << "7. Мили -> Километры\n";
 		// === КОНЕЦ БЛОКА МЕНЮ ===
 		cout << "0. Выход\n";
 		cout << "Выберите пункт: ";
@@ -85,6 +88,17 @@ int main() {
 				cerr << e.what() << "\n";
 			}
 			break;
+case 6:
+                cout << "Введите километры: ";
+                if (!checkInput(value)) break;
+                cout << value << " км = " << kmToMiles(value) << " миль\n";
+                break;
+                
+            case 7:
+                cout << "Введите мили: ";
+                if (!checkInput(value)) break;
+                cout << value << " миль = " << milesToKm(value) << " км\n";
+                break;
 			// === КОНЕЦ БЛОКА ОБРАБОТКИ ===
 		case 0:
 			cout << "Работа завершена.\n";
@@ -95,3 +109,4 @@ int main() {
 	} while (choice != 0);
 	return 0;
 }
+
