@@ -90,13 +90,11 @@ int main() {
 			break;
 case 6:
                 cout << "Введите километры: ";
-                if (!checkInput(value)) break;
                 cout << value << " км = " << kmToMiles(value) << " миль\n";
                 break;
                 
             case 7:
                 cout << "Введите мили: ";
-                if (!checkInput(value)) break;
                 cout << value << " миль = " << milesToKm(value) << " км\n";
                 break;
 			// === КОНЕЦ БЛОКА ОБРАБОТКИ ===
