@@ -67,7 +67,7 @@ int main() {
 			cout << "Введите массу m и высоту h: ";
 			cin >> m >> h;
 			try {
-				double result = potentialEnergy(m, h)
+				double result = potentialEnergy(m, h);
 					cout << " Потенциальная энергия = " << result << "\n";
 			}
 			catch (const invalid_argument& e) {

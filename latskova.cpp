@@ -1,6 +1,7 @@
 ﻿#include "latskova.h"
 #include <cmath>
 #include <iostream>
+using namespace std;
 
 double potentialEnergy(double m, double h) {
 	if (m < 0)throw invalid_argument("Масса не может быть отрицательной!");
