@@ -25,6 +25,8 @@ int main() {
 
 		// === БЛОК МЕНЮ: каждый участник добавляет свои пункты ===
 		cout << "1. Плотность\n";
+		cout << "2.Масса\n";
+		cout << "3.Объем\n";
 		// === КОНЕЦ БЛОКА МЕНЮ ===
 
 
@@ -37,6 +39,16 @@ int main() {
 			cout << "Введите массу m и объем V: ";
 			cin >> m >> V;
 			cout << "Плотность = " << density(m, V) << "\n";
+			break;
+		case 2:
+			cout << "Введите плотность rho и объем V: ";
+			cin >> rho >> V;
+			cout << "Масса = " << massFromDensity(rho, V) << "\n";
+			break;
+		case 3:
+			cout << "Введите массу m и плотность rho: ";
+			cin >> m >> rho;
+			cout << "Объем = " << volumeFromDensity(m, rho) << "\n";
 			break;
 			// === КОНЕЦ БЛОКА ОБРАБОТКИ ===
 		case 0:
