@@ -96,7 +96,6 @@ case 6:
                 
             case 7:
                 cout << "Введите мили: ";
-                if (!checkInput(value)) break;
                 cout << value << " миль = " << milesToKm(value) << " км\n";
                 break;
 			// === КОНЕЦ БЛОКА ОБРАБОТКИ ===
