@@ -8,7 +8,7 @@
 
 // === БЛОК ПОДКЛЮЧЕНИЙ: каждый участник добавляет свой заголовочный файл ===
 // #include "parshukova.h"
-// #include "latskova.h"
+#include "latskova.h"
 #include "komarovskaya.h"
 // === КОНЕЦ БЛОКА ПОДКЛЮЧЕНИЙ ===
 
@@ -22,14 +22,13 @@ int main() {
 	int choice;
 	do {
 		cout << "\n=== Командный проект: сборник расчётов ===\n";
-
 		// === БЛОК МЕНЮ: каждый участник добавляет свои пункты ===
 		cout << "1. Плотность\n";
-		cout << "2.Масса\n";
+		cout << "2. Масса\n";
 		cout << "3.Объем\n";
+		cout << "4. Потенциальная энергия\n";
+		cout << "5. Высота через энергию\n";
 		// === КОНЕЦ БЛОКА МЕНЮ ===
-
-
 		cout << "0. Выход\n";
 		cout << "Выберите пункт: ";
 		cin >> choice;
@@ -60,6 +59,28 @@ int main() {
 				cout << "Введите массу m и плотность rho: ";
 				cin >> m >> rho;
 				cout << "Объем = " << volumeFromDensity(m, rho) << "\n";
+			}
+			catch (const invalid_argument& e) {
+				cerr << e.what() << "\n";
+			}
+			break;
+		case 4:
+			cout << "Введите массу m и высоту h: ";
+			cin >> m >> h;
+			try {
+				double result = potentialEnergy(m, h)
+					cout << " Потенциальная энергия = " << result << "\n";
+			}
+			catch (const invalid_argument& e) {
+				cerr << e.what() << "\n";
+			}
+			break;
+		case 5:
+			cout << "Введите энергию E и массу m: ";
+			cin >> E >> m;
+			try {
+				double result = heightFromEnergy(E, m);
+				cout << " Высота = " << result << "\n";
 			}
 			catch (const invalid_argument& e) {
 				cerr << e.what() << "\n";
