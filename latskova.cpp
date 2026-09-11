@@ -1,12 +1,16 @@
-#include "latskova.h"
+ï»¿#include "latskova.h"
 #include <cmath>
+#include <iostream>
+#include <stdexcept>
+using namespace std;
+const double G = 9.81;
 
 double potentialEnergy(double m, double h) {
-	if (m < 0)throw invalid_argument("Ìàññà íå ìîæåò áûòü îòðèöàòåëüíîé!");
-	return m * h * g;
+	if (m < 0)throw invalid_argument("ÐœÐ°ÑÑÐ° Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ð¹!");
+	return m * h * G;
 }
 
 double heightFromEnergy(double E, double m) {
-	if (m = < 0)throw invalid_argument("Ìàññà íå ìîæåò áûòü îòðèöàòåëüíîé èëè ðàâíîé íóëþ!");
-	return E / (m * g);
+	if (m  <= 0)throw invalid_argument("ÐœÐ°ÑÑÐ° Ð½Ðµ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ð¾Ñ‚Ñ€Ð¸Ñ†Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð¾Ð¹ Ð¸Ð»Ð¸ Ñ€Ð°Ð²Ð½Ð¾Ð¹ Ð½ÑƒÐ»ÑŽ!");
+	return E / (m * G);
 }
