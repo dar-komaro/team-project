@@ -3,6 +3,10 @@
 
 #include <iostream>
 #include <windows.h>
+void setConsoleUTF8() {
+	SetConsoleOutputCP(CP_UTF8);
+	SetConsoleCP(CP_UTF8);
+}
 #include <windows.h> 
 #define g 9.81
 
@@ -15,6 +19,7 @@
 using namespace std;
 
 int main() {
+	setConsoleUTF8();
 
 	double m, V, rho, E, h, value;
 	SetConsoleCP(1251);
@@ -110,3 +115,4 @@ case 6:
 	return 0;
 }
 
+ 

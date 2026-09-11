@@ -1,4 +1,4 @@
-#include "parshukova.h"
+﻿#include "parshukova.h"
 #include <iostream>
 using namespace std;
 
