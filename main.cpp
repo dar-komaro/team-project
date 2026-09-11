@@ -2,9 +2,8 @@
 // Команда: Паршукова (в. 63), Лацкова (в. 25), Комаровская (в. 27, техлид).
 
 #include <iostream>
-#include <iostream>
 #include <windows.h> 
-
+#define g 9.81
 
 // === БЛОК ПОДКЛЮЧЕНИЙ: каждый участник добавляет свой заголовочный файл ===
 // #include "parshukova.h"
@@ -16,7 +15,7 @@ using namespace std;
 
 
 int main() {
-	double m, V, rho;
+	double m, V, rho, E, h;
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	int choice;
@@ -25,7 +24,7 @@ int main() {
 		// === БЛОК МЕНЮ: каждый участник добавляет свои пункты ===
 		cout << "1. Плотность\n";
 		cout << "2. Масса\n";
-		cout << "3.Объем\n";
+		cout << "3. Объем\n";
 		cout << "4. Потенциальная энергия\n";
 		cout << "5. Высота через энергию\n";
 		// === КОНЕЦ БЛОКА МЕНЮ ===
