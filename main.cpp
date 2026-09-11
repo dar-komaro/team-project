@@ -90,7 +90,6 @@ int main() {
 			break;
 case 6:
                 cout << "Введите километры: ";
-                if (!checkInput(value)) break;
                 cout << value << " км = " << kmToMiles(value) << " миль\n";
                 break;
                 

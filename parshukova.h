@@ -5,7 +5,4 @@
 double kmToMiles(double km);
 double milesToKm(double miles);
 
-// Проверка ввода
-bool checkInput(double& value);
-
 #endif // PARSHUKOVA_H
