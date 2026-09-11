@@ -4,25 +4,19 @@ using namespace std;
 
 // Километры → мили
 double kmToMiles(double km) {
+    if (km < 0) {
+        cout << "Ошибка: расстояние не может быть отрицательным!\n";
+        return 0;
+    }
     return km * 0.621371;
 }
 
 // Мили → километры
 double milesToKm(double miles) {
+    if (miles < 0) {
+        cout << "Ошибка: расстояние не может быть отрицательным!\n";
+        return 0;
+    }
     return miles * 1.609344;
 }
 
-// Проверка ввода: буквы и отрицательные числа
-bool checkInput(double& value) {
-    if (!(cin >> value)) {
-        cout << "Ошибка: введите число!\n";
-        cin.clear();
-        cin.ignore(10000, '\n');
-        return false;
-    }
-    if (value < 0) {
-        cout << "Ошибка: число не может быть отрицательным!\n";
-        return false;
-    }
-    return true;
-}
